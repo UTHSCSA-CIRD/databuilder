@@ -839,8 +839,8 @@ def send_completion_mail(smtp, email_config, username, gethostname, filename,
         #TODO get actual users email (from json)
         #It is an unfortunate hack that we use the [username]+[config domain]
         recipient = '{0}@{1}'.format(username, domain)
-        recipient = 'bos@uthscsa.edu'
-        emailer = Emailer(smtp, lambda: [recipient])
+        recipient = 'bos@uthscsa.edu,bokov@uthscsa.edu'
+        emailer = Emailer(smtp, lambda: [r for r in recipient.split(',')])
 
         message_kwds = {'filename': filename,
                         'hostname': gethostname(),
