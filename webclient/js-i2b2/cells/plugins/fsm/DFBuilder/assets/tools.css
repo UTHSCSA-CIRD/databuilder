@@ -75,6 +75,13 @@ table.analysis-params tr td div.droptrgt {
 	white-space:nowrap;
 	
 }
+#analysis-mainDiv #words {
+	padding: 5px 10px;
+	text-align:left;
+	width: 80%;
+	overflow:inherit;
+	white-space:normal;
+}
 
 .droptrgt .concptItem {
 	padding: 5px 10px;
