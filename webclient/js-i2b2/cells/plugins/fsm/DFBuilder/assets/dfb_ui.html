@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>DFBuilder plugin</title>
+<meta name="charset" content="utf-8" />
+</head>
+<body>
+
+
+<div id='analysis-mainDiv'>
+  <h1>Data Builder</h1>
+
+  <p>Extract selected data for a patient set into a SQLite db file and a condensed feature set csv file.</p>
+
+  <div class="analysis-MainContent">
+    <table class="analysis-params">
+      <tr>
+        <th><div class="droptrgtlbl">Patient Set:</div></th>
+        <td>
+          <div id='DFBuilder-PRSDROP' class="droptrgt SDX-PRS">
+            Drop a Patient Set here
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p><small>The <a target="_help"
+          href="/i2b2/webclient/help/qt.html#qtRunningQuery">Running a
+          Query</a> section shows how to create one.</small></p>
+        </td>
+      </tr>
+      <tr>
+        <th><div class="droptrgtlbl">Patient Data:</div></th>
+        <td>
+          <p><em>Birthdate, sex, vital status, race, etc. are
+	  automatically included.</em></p>
+        </td>
+      </tr>
+      <tr>
+        <th><div class="droptrgtlbl">Other Observations:</div></th>
+        <td>
+          <div id='DFBuilder-CONCPTDROP' class="droptrgt SDX-CONCPT">
+            Drop a Concept here
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th><div class="droptrgtlbl">Observations from Query:</div></th>
+        <td>
+          <div id='DFBuilder-QDROP' class="droptrgt SDX-QDEF">
+            Drop a Query here
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th><div class="outputOptionsLbl">File:</div></th>
+        <td>
+          <div class="outputOptions">
+          <!--<code>/home/<span class="username">USERNAME</span>/ -->
+          <code>
+            <input type="text" id="filename" /> (.db, .csv)
+              <!--<select id="backend">
+	      <option selected='selected' value="rgate">Rda</option>
+	      <option value="builder">db</option>
+              </select>-->
+	  </code>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th><div class="outputOptionsLbl">Project ID:</div></th>
+        <td>
+          <div class="outputOptions">
+            <input type="text" id="project_id" />
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div id="container">
+        <!--
+        <div style="float: left; width: 160px;" id="runKM" class="runButton">
+          Build Data
+        </div>
+        -->
+        <input style="float: left; width: 160px;" type="button" value="Build Data" id="runKM" class="runButton"/>
+
+        <div style=
+        "float: left; width: 60%; margin-left: 30px; margin-top: 10px;"
+        id="info">
+  <!--<span>Plug-in info</span>-->
+        </div>
+
+        <div style="clear: both;"></div>
+      </div>
+
+      <div id="rgate_results" class="results"></div>
+      <pre id="df_suggest" class="results"></pre>
+      <pre id="df_str" class="results"></pre>
+
+    </div>
+
+<hr />
+    <div><h3>Acknowledgements</h3>
+    <p>The Data Builder plugin was developed by KUMC with condensed feature extraction added by UTHSCSA.
+        <br><br>
+        For support, contact:
+        <a href="mailto:informatics@uthscsa.edu?Subject=Data%20builder%20plugin" target="_top">
+                        informatics@uthscsa.edu</a>
+    </p>
+    </div>
+  </div>
+
+</body>
+</html>
